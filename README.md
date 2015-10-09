@@ -12,11 +12,11 @@ translation services are used or assumed.
 
 ## Running in Node.js
 
-* Start the Server
+Start the Server
 
       node server.js
 
-* Post the contents of `sample.request.json` to `http://localhost:3001`
+Post the contents of `sample.request.json` to `http://localhost:3001`
 
       curl -i -X POST -d @sample.request.json http://localhost:3001
 
