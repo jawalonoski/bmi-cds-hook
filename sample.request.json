@@ -1,0 +1,116 @@
+{
+  "resourceType":"Parameters",
+  "parameter":[
+    {
+      "name":"activity",
+      "valueCoding":{
+        "system":"http://cds-hooks.smarthealthit.org/activity",
+        "code":"patient-view"
+      }
+    },{
+      "name":"activityInstance",
+      "valueString":"83e1d543-ca22-49f5-88f7-d92c2026712e"
+    },{
+      "name":"fhirServer",
+      "valueUri":"http://hooks.smarthealthit.org:9080"
+    },{
+      "name":"redirect",
+      "valueString":"http://hooks.fhir.me/service-done.html"
+    },{
+      "name":"user",
+      "valueString":"Practitioner/example"
+    },{
+      "name":"patient",
+      "valueId":"1288992"
+    },{
+      "name":"preFetchData",
+      "resource":{
+        "resourceType":"Bundle",
+        "type":"transaction-response",
+        "entry":[
+          {
+            "resource":{
+              "resourceType":"Patient",
+              "id":"1288992",
+              "meta":{"versionId":"94699","lastUpdated":"2015-09-16T18:12:59.795-05:00"},
+              "text":{"status":"generated","div":"<div>\n        \n            <p>Daniel Adams</p>\n      \n          </div>"},
+              "identifier":[{
+                  "use":"usual",
+                  "type":{
+                    "coding":[{
+                        "system":"http://hl7.org/fhir/v2/0203",
+                        "code":"MR",
+                        "display":"Medical record number"
+                      }],
+                    "text":"Medical record number"
+                  },
+                  "system":"http://hospital.smarthealthit.org",
+                  "value":"1288992"
+                }],
+              "active":true,
+              "name":[{"use":"official","family":["Adams"],"given":["Daniel","X."]}],
+              "telecom":[{"system":"email","value":"daniel.adams@example.com"}],
+              "gender":"male",
+              "birthDate":"1925-12-23",
+              "address":[{"use":"home","line":["1 Hill AveApt 14"],"city":"Tulsa","state":"OK","postalCode":"74117","country":"USA"}]
+            },
+            "response":{"status":"200 OK"}
+          },{
+            "resource":{
+              "resourceType":"Bundle",
+              "type":"searchset",
+              "total":27,
+              "link":[
+                {"relation":"self","url":"http://hooks.smarthealthit.org:9080/?"},
+                {"relation":"next","url":"http://hooks.smarthealthit.org:9080/?_count=1&_skip=1"}
+              ],
+              "entry":[{
+                "fullUrl":"http://hooks.smarthealthit.org:9080/Observation/854-height",
+                "resource":{
+                  "resourceType":"Observation",
+                  "id":"854-height",
+                  "meta":{"versionId":"98063","lastUpdated":"2015-09-16T18:13:09.293-05:00"},
+                  "text":{"status":"generated","div":"<div>2009-12-01: height = 163.068 cm</div>"},
+                  "status":"final",
+                  "code":{"coding":[{"system":"http://loinc.org","code":"8302-2","display":"height"}],"text":"height"},
+                  "subject":{"reference":"Patient/1288992"},
+                  "encounter":{"reference":"Encounter/854"},
+                  "effectiveDateTime":"2009-12-01",
+                  "valueQuantity":{"value":163.068,"unit":"cm","system":"http://unitsofmeasure.org","code":"cm"}
+                },
+                "search":{"mode":"match"}
+              }]
+            },
+            "response":{"status":"200 OK"}
+          },{
+            "resource":{
+              "resourceType":"Bundle",
+              "type":"searchset",
+              "total":27,
+              "link":[
+                {"relation":"self","url":"http://hooks.smarthealthit.org:9080/?"},
+                {"relation":"next","url":"http://hooks.smarthealthit.org:9080/?_count=1&_skip=1"}
+              ],
+              "entry":[{
+                "fullUrl":"http://hooks.smarthealthit.org:9080/Observation/854-weight",
+                "resource":{
+                  "resourceType":"Observation",
+                  "id":"854-weight",
+                  "meta":{"versionId":"98111","lastUpdated":"2015-09-16T18:13:09.413-05:00"},
+                  "text":{"status":"generated","div":"<div>2009-12-01: weight = 91.53494 kg</div>"},
+                  "status":"final",
+                  "code":{"coding":[{"system":"http://loinc.org","code":"3141-9","display":"weight"}],"text":"weight"},
+                  "subject":{"reference":"Patient/1288992"},
+                  "encounter":{"reference":"Encounter/854"},
+                  "effectiveDateTime":"2009-12-01",
+                  "valueQuantity":{"value":91.53494,"unit":"kg","system":"http://unitsofmeasure.org","code":"kg"}
+                },
+                "search":{"mode":"match"}
+              }]
+            },
+            "response":{"status":"200 OK"}
+          }
+      ]
+    }
+  }]
+}
