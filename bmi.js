@@ -16,11 +16,14 @@ var getCard = function(bmi)
 
   card.part.push({});
   card.part[1].name = "source";
-  card.part[1].valueString = "BMI CDS Hook";
+  card.part[1].part = []
+  card.part[1].part.push({});
+  card.part[1].part[0].name = "label";
+  card.part[1].part[0].valueString = "BMI CDS Hook";
 
   card.part.push({});
   card.part[2].name = "indicator";
-  card.part[2].valueString = "info";
+  card.part[2].valueCode = "info";
 
   var params = {};
   params.resourceType = "Parameters";
